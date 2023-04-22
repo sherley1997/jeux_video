@@ -33,8 +33,6 @@ class StripeController extends AbstractController
 
     private $userInfo;
 
-    private $cartCount;
-
     private $session;
 
 
@@ -69,8 +67,6 @@ class StripeController extends AbstractController
             'clef_stripe' => $_ENV["STRIPE_KEY"],
 
             'bodyId' => $this->bodyId,
-
-            'cartCount' => $this->cartCount,
 
             'userInfo' => $this->userInfo,
 
@@ -125,8 +121,6 @@ class StripeController extends AbstractController
 
             'bodyId' => $this->bodyId,
 
-            'cartCount' => $this->cartCount,
-
             'userInfo' => $this->userInfo,
 
             'orderTotal' => $this->session->get('orderTotal'),
@@ -145,8 +139,6 @@ class StripeController extends AbstractController
         return $this->render('stripe/payment_failure.html.twig', [
 
             'bodyId' => $this->bodyId,
-
-            'cartCount' => $this->cartCount,
 
             'userInfo' => $this->userInfo,
 
