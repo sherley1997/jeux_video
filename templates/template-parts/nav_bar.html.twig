@@ -1,0 +1,65 @@
+<nav class="navbar navbar-expand-lg sticky-top" style="background-color: #143464">
+    <div class="container-fluid ">
+        <a class="navbar-brand" style="color: #E3465C;" href="index.html">LIMEBERNA</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" style="color: #ffffff;" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          {{ userInfo.isLoggedIn ? "Déconnexion" : "Connexion" }}
+          
+          </a>
+
+          <ul class="dropdown-menu">
+            {% if userInfo.isAdmin %}
+
+              <li><a class="dropdown-item" href="{{ path('app_admin') }}">Backoffice</a></li>
+
+              <li><hr class="dropdown-divider"></li>
+              
+              <li><a class="dropdown-item" href="{{ path('app_logout') }}">Déconnexion</a></li>
+
+            {% elseif userInfo.isLoggedIn %}
+              <li><a class="dropdown-item" href="{{ path('app_member') }}">Mon compte</a></li>
+
+              <li><hr class="dropdown-divider"></li>
+
+              <li><a class="dropdown-item" href="{{ path('app_logout') }}">Déconnexion</a></li>
+            {% else %}
+              <li><a class="dropdown-item connexion-modal-trigger" href="javascript:void(0)">Se connecter</a></li>
+
+              <li><hr class="dropdown-divider"></li>
+
+              <li><a class="dropdown-item" href="{{ path('app_register') }}">S'inscrire</a></li>
+            {% endif %}
+          </ul>
+        </li>
+
+        <!-- Sous-menu -->
+            <li class="nav-item dropdown">
+                <a class="nav-link active dropdown-toggle" style="color: #ffffff;" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Catégorie</a>
+                <ul class="dropdown-menu">
+                <li><a class="sousMenu" href="#">PlayStation</a></li>
+                <li><a class="sousMenu" href="#">XBox</a></li>
+                <li><a class="sousMenu" href="#">Nintendo</a></li>
+                <li><a class="sousMenu" href="#">Ordinateur</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="sousMenu" href="jeux.html">Tous les jeux</a></li>
+                </ul>
+            </li>
+            <li class="nav-item"><a class="nav-link active" aria-current="page" style="color: #ffffff;" href="FAQ.html">FAQ</a></li>
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" style="color: #ffffff;" href="panier.html">Panier</a>
+            </li> 
+      </ul>
+      <!-- Barre de recherche -->
+        <form class="d-flex" role="search">
+          <input class="form-control me-2" type="search" placeholder="Recherche" aria-label="Search">
+          <button class="btn btn-danger" type="submit"><i class="fa-solid fa-gamepad"></i></button>
+        </form>
+    </div>
+  </div>
+</nav>

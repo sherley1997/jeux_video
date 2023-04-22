@@ -1,0 +1,13 @@
+App\Entity\Membre:
+  properties:
+    email:
+      - NotNull: ~
+      - NotBlank: ~
+      - Type:
+          type: string
+          message: "{{ value }} n'est pas un {{ type }} valide !" 
+      - Length:
+          min: 3
+          max: 255
+          minMessage: Le champ email doit contenier au moins {{ limit }} caractères.
+          maxMessage: Le champ email doit au plus avoir {{ limit }} caractères.

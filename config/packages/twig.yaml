@@ -1,0 +1,14 @@
+twig:
+    default_path: '%kernel.project_dir%/templates'
+    form_theme: [bootstrap_5_layout.html.twig]
+    globals:
+        HOME_PAGE: "home"
+        LOGIN_PAGE: "login"
+        ADMIN_DASHBOARD: "admin"
+        ADMIN_MEMBER_MANAGEMENT: "admin-member"
+        MEMBER_DASHBOARD: "member"
+        REGISTRATION: "register"
+
+when@test:
+    twig:
+        strict_variables: true

@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Limeberna{% endblock %}
+
+{% block header %}
+    <div>
+        <img class="photo w-100" src="{{ asset('assets/img/project.png') }}" alt="Photo">
+        <h1 class="nouvo m-1">Dernière Nouveauté</h1>
+    </div>
+{% endblock %}
+
+{% block body %}
+    <!-- Article -->
+    <h2 class="nouvo m-2">Console Compatible</h2>
+    <section class="milieu row m-2 p-2" style="background-color: #143464;">
+        <article class="arti m-2 p-2 col-md-5 card" style="background-color: #1a9b9b;">
+            <img class="photoArt w-100" src="{{asset('assets/img/PlayStation.jpg')}}" alt="PlayStation">
+        </article>
+        
+        <article class="arti m-2 p-2 col-md-5 card" style="background-color: #1a9b9b;">
+            <img class="photoArt w-100" src="{{asset('assets/img/XBox.jpg')}}" alt="XBox">
+        </article>
+        
+        <article class="arti m-2 p-2 col-md-5 card" style="background-color: #1a9b9b;">
+            <img class="photoArt w-100" src="{{asset('assets/img/nitendoSwitch-1.png')}}" alt="Nintendo">
+        </article>
+        
+        <article class="arti m-2 p-2 col-md-5 card" style="background-color: #1a9b9b;">
+            <img class="photoArt w-100" src="{{asset('assets/img/ordinateur.png')}}" alt="Ordinateur">
+        </article>
+    </section>
+{% endblock %}
